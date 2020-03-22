@@ -23,18 +23,23 @@ This is a personal project of mine in which I implemented a low-budget remote co
     └── RcCarController.ino
 ````
 ### Usage:
-1) [Load an AT firmware to the ESP8266](https://www.instructables.com/id/ESP8266-ESP-12E-UART-Wireless-WIFI-Shield-TTL-Conv/)
-2) Modify apSsid & apPwd to your preference in RcCarController.ino and upload Arduino code to the board
-3) Compile client-side code for remote control
+1) [Solder & assemble everything together](https://www.youtube.com/watch?v=xyJ834x7aas&feature=emb_title)
+2) [Load an AT firmware to the ESP8266](https://www.instructables.com/id/ESP8266-ESP-12E-UART-Wireless-WIFI-Shield-TTL-Conv/)
+3) Modify apSsid & apPwd to your preference in RcCarController.ino and upload Arduino code to the board
+4) Compile client-side code for remote control
 ````bash
 # Assuming we're at the working directory
 cd RcCarClient/build
 gcc -W -Wall ../src/RcCarClientSocket.c -lncurses -o RcCarClientSocket # Change 'Socket' -> 'Nc' if you wanna try out Netcat version ( ͡° ͜ʖ ͡°) - I mean they're pretty much the same eh... I only used it for testing
 ````
-4) Connect to the wifi hotstop (apSsid - apPwd that you set up in step 2)
-5) LET'S GO
+5) Connect to the wifi hotstop (apSsid - apPwd that you set up in step 2)
+6) LET'S GO
 ````bash
 # Assuming we're at the working directory
 cd RcCarClient/build
 ./RcCarClientSocket # Or ./RcCarClientNc
 ````
+### TODOs:
+1) Update README.md if needed 
+2) Implement multi-keys mode in RcCarClient* 
+3) Implement an Android app to control
